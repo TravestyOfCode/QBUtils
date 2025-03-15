@@ -15,8 +15,10 @@ public abstract class Error
     }
 
     public static BadRequestError BadRequestError() => new BadRequestError();
+    public static BadRequestError BadRequestError(string key, string errorMessage) => new BadRequestError(key, errorMessage);
     public static ForbiddenError ForbiddenError() => new ForbiddenError();
     public static NotFoundError NotFoundError() => new NotFoundError();
+    public static NotFoundError NotFoundError(string key, string value) => new NotFoundError($"No {key} with value '{value}' was found.");
     public static ServerError ServerError() => new ServerError();
 }
 
