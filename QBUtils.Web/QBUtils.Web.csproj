@@ -24,4 +24,8 @@
 		<Using Include="Microsoft.Extensions.Logging" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Folder Include="wwwroot\lib\" />
+	</ItemGroup>
+
 </Project>
