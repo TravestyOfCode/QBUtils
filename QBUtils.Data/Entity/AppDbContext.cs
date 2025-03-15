@@ -7,6 +7,8 @@ namespace QBUtils.Data;
 
 internal class AppDbContext : IdentityDbContext<AppUser>
 {
+    public DbSet<Entity.SQLConnection> SQLConnections { get; set; }
+
     public AppDbContext(DbContextOptions options) : base(options)
     {
     }
