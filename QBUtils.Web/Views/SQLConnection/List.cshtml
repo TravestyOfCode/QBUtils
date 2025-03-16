@@ -1,0 +1,22 @@
+﻿@model IEnumerable<QBUtils.Data.SQLConnectionModel>
+
+<table class="table table-responsive">
+    <thead>
+        <tr>
+            <th>Actions</th>
+            <th>Name</th>
+            <th>QB File</th>
+            <th>User Name</th>
+            <th>Password</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var conn in (Model == null ? [] : Model))
+        {
+            <tr id="id-@conn.Id">
+                <partial name="Editable" model="@conn" />
+            </tr>
+        }
+    </tbody>
+</table>
+

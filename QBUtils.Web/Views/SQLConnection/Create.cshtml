@@ -1,0 +1,29 @@
+﻿@model QBUtils.Data.SQLConnection.CreateSQLConnection
+
+<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+<form method="post">
+    <div class="row mb-2">
+        <label class="form-label col-2 text-end" asp-for="Name"></label>
+        <input class="form-control col" autofocus asp-for="Name" />
+        <span asp-validation-for="Name" class="text-danget text-end"></span>
+    </div>
+    <div class="row mb-2">
+        <label class="form-label col-2 text-end" asp-for="QBFile"></label>
+        <input class="form-control col" asp-for="QBFile" spellcheck="false" />
+        <span asp-validation-for="QBFile" class="text-danget text-end"></span>
+    </div>
+    <div class="row mb-2">
+        <label class="form-label col-2 text-end" asp-for="UserName"></label>
+        <input class="form-control col" asp-for="UserName" />
+        <span asp-validation-for="UserName" class="text-danget text-end"></span>
+    </div>
+    <div class="row mb-2">
+        <label class="form-label col-2 text-end" asp-for="Password"></label>
+        <input class="form-control col" asp-for="Password" />
+        <span asp-validation-for="Password" class="text-danget text-end"></span>
+    </div>
+    <div class="row justify-content-end">
+        <button type="button" class="btn btn-secondary col-auto me-2" hx-get="/sqlconnection/list" hx-target="#list">Cancel</button>
+        <button type="button" class="btn btn-success col-auto" hx-post="/sqlconnection/create" hx-target="#list">Save</button>
+    </div>
+</form>

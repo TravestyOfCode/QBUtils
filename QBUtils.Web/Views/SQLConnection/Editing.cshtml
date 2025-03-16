@@ -1,0 +1,27 @@
+﻿@model QBUtils.Data.SQLConnectionModel
+
+@{
+    var id = ViewContext.ViewData.ModelState.GetValueOrDefault("Id")!.RawValue;
+}
+
+<td>
+    <button type="button" class="btn btn-success" hx-post="/sqlconnection/editing" hx-include="#id-@id" hx-target="#id-@id">Save</button>
+    <button type="button" class="btn btn-secondary" hx-get="/sqlconnection/editable/@id" hx-target="#id-@id">Cancel</button>
+</td>
+<td>
+    <input type="hidden" asp-for="Id" />
+    <input class="form-control" asp-for="Name" />
+    <span class="text-danger text-end" asp-validation-for="Name"></span>
+</td>
+<td>
+    <input class="form-control" asp-for="QBFile" />
+    <span class="text-danger text-end" asp-validation-for="QBFile"></span>
+</td>
+<td>
+    <input class="form-control" asp-for="UserName" />
+    <span class="text-danger text-end" asp-validation-for="UserName"></span>
+</td>
+<td>
+    <input class="form-control" asp-for="Password" />
+    <span class="text-danger text-end" asp-validation-for="Password"></span>
+</td>

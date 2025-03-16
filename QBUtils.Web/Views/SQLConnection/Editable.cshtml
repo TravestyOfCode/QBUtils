@@ -1,0 +1,10 @@
+﻿@model QBUtils.Data.SQLConnectionModel
+
+<td>
+    <button type="button" class="btn btn-primary" hx-get="/sqlconnection/editing/@Model.Id" hx-target="#id-@Model.Id">Edit</button>
+    <button type="button" class="btn btn-danger" hx-post="/sqlconnection/delete/@Model.Id" hx-confirm="@($"Are you sure you want to delete the connection:\n{Model.Name}")">Delete</button>
+</td>
+<td>@Model.Name</td>
+<td>@Model.QBFile</td>
+<td>@Model.UserName</td>
+<td>@Model.Password</td>

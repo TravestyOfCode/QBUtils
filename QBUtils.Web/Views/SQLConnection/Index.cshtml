@@ -1,0 +1,16 @@
+﻿@{
+    ViewData["Title"] = "SQL Connections";
+}
+
+<div class="row justify-content-between" >
+    <div class="col">
+        <h1>@ViewData["Title"]</h1>
+    </div>
+    <div class="col-auto">
+        <button type="button" class="btn btn-primary" hx-get="/sqlconnection/create" hx-target="#list">Create</button>
+    </div>
+</div>
+
+<div id="list" hx-get="/sqlconnection/list" hx-trigger="load">
+
+</div>
